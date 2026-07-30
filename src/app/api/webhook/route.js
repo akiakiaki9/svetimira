@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
 
-const TOKEN = '8638779611:AAGg1V8-pX460xNZEvVPAYDjQH9-8Vw3Njo'
+const TOKEN = '8847061473:AAG2HsYkIKsb6VY7GY412urB8OqTyn_OM50'
 const SITE_URL = 'https://svetimira.uz'
 
 export async function POST(request) {
