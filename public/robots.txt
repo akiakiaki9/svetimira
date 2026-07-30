@@ -1,0 +1,33 @@
+# robots.txt для Цветы мира
+# https://svetimira.uz
+
+User-agent: *
+Allow: /
+
+# Запрещаем индексацию служебных страниц
+Disallow: /api/
+Disallow: /_next/
+Disallow: /static/
+Disallow: /admin/
+Disallow: /dashboard/
+
+# Карта сайта
+Sitemap: https://svetimira.uz/sitemap.xml
+
+# Правила для Googlebot
+User-agent: Googlebot
+Allow: /
+Disallow: /_next/
+Disallow: /api/
+
+# Правила для Yandex
+User-agent: Yandex
+Allow: /
+Disallow: /_next/
+Disallow: /api/
+
+# Задержка для медленных ботов
+Crawl-delay: 1
+
+# Хост (для Яндекс)
+Host: https://svetimira.uz
