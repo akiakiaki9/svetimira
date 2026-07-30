@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 
 const TOKEN = '8847061473:AAG2HsYkIKsb6VY7GY412urB8OqTyn_OM50'
-const SITE_URL = 'https://svetimira.uz'
+const SITE_URL = 'https://svetimira.uz' | 'https://svetimira.vercel.app/'
 
 export async function POST(request) {
     try {
