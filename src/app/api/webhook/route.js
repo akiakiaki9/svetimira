@@ -20,7 +20,7 @@ export async function POST(request) {
 <b>🌹 Цветы мира</b>
 <i>Цветы, которые говорят вместо слов</i>
 
-🌸 <b>Каталог:</b> ${SITE_URL}/catalog
+🌸 <b>Каталог:</b> ${SITE_URL}#catalog
 📸 <b>Instagram:</b> https://instagram.com/sveti.mira.bukhara
 📱 <b>Telegram:</b> https://t.me/svetimira_bot
 📞 <b>Телефон:</b> +998 91 444 80 48
