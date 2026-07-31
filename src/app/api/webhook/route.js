@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 
 const TOKEN = '8847061473:AAG2HsYkIKsb6VY7GY412urB8OqTyn_OM50'
-const SITE_URL = 'https://www.svetimira.uz' // <-- Добавлен www
+const SITE_URL = 'https://www.svetimira.uz'
 
 export async function POST(request) {
     try {
@@ -15,18 +15,19 @@ export async function POST(request) {
 
             console.log(`👤 ${firstName} (${chatId}) написал: ${text}`)
 
+            // Используем HTML вместо Markdown
             const replyText = `
-🌹 *Цветы мира*
-_Цветы, которые говорят вместо слов_
+<b>🌹 Цветы мира</b>
+<i>Цветы, которые говорят вместо слов</i>
 
-🌸 *Каталог:* ${SITE_URL}/catalog
-📸 *Instagram:* https://instagram.com/sveti.mira.bukhara
-📱 *Telegram:* https://t.me/svetimira_bot
-📞 *Телефон:* +998 91 444 80 48
-📍 *Адрес:* Бухара, Узбекистан
-🕐 *Режим работы:* Пн-Пт 09:00-20:00, Сб 09:00-18:00
+🌸 <b>Каталог:</b> ${SITE_URL}/catalog
+📸 <b>Instagram:</b> https://instagram.com/sveti.mira.bukhara
+📱 <b>Telegram:</b> https://t.me/svetimira_bot
+📞 <b>Телефон:</b> +998 91 444 80 48
+📍 <b>Адрес:</b> Бухара, Узбекистан
+🕐 <b>Режим работы:</b> Пн-Пт 09:00-20:00, Сб 09:00-18:00
 
-💐 *Закажите букет прямо сейчас!*
+💐 <b>Закажите букет прямо сейчас!</b>
             `
 
             const response = await fetch(`https://api.telegram.org/bot${TOKEN}/sendMessage`, {
@@ -35,7 +36,7 @@ _Цветы, которые говорят вместо слов_
                 body: JSON.stringify({
                     chat_id: chatId,
                     text: replyText,
-                    parse_mode: 'Markdown',
+                    parse_mode: 'HTML', // <-- Меняем с Markdown на HTML
                     reply_markup: {
                         inline_keyboard: [
                             [{ text: '🌸 Смотреть каталог', url: `${SITE_URL}/catalog` }],
