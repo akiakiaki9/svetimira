@@ -197,7 +197,6 @@ export default function About() {
                   className="story-video"
                   playsInline
                   loop
-                  poster="/images/about-poster.jpg"
                   onPlay={() => setIsVideoPlaying(true)}
                   onPause={() => setIsVideoPlaying(false)}
                 />
