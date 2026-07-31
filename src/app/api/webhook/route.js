@@ -1,12 +1,11 @@
 import { NextResponse } from 'next/server'
 
 const TOKEN = '8847061473:AAG2HsYkIKsb6VY7GY412urB8OqTyn_OM50'
-const SITE_URL = 'https://svetimira.uz'
+const SITE_URL = 'https://www.svetimira.uz' // <-- Добавлен www
 
 export async function POST(request) {
     try {
         const body = await request.json()
-
         console.log('📩 Получено сообщение:', JSON.stringify(body, null, 2))
 
         if (body.message) {
@@ -16,12 +15,11 @@ export async function POST(request) {
 
             console.log(`👤 ${firstName} (${chatId}) написал: ${text}`)
 
-            // Формируем ответное сообщение
             const replyText = `
 🌹 *Цветы мира*
 _Цветы, которые говорят вместо слов_
 
-🌸 *Каталог:* ${SITE_URL}#catalog
+🌸 *Каталог:* ${SITE_URL}/catalog
 📸 *Instagram:* https://instagram.com/sveti.mira.bukhara
 📱 *Telegram:* https://t.me/svetimira_bot
 📞 *Телефон:* +998 91 444 80 48
@@ -29,9 +27,8 @@ _Цветы, которые говорят вместо слов_
 🕐 *Режим работы:* Пн-Пт 09:00-20:00, Сб 09:00-18:00
 
 💐 *Закажите букет прямо сейчас!*
-      `
+            `
 
-            // Отправляем ответ с кнопками
             const response = await fetch(`https://api.telegram.org/bot${TOKEN}/sendMessage`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
