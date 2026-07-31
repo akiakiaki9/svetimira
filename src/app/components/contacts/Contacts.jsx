@@ -37,9 +37,7 @@ export default function Contact() {
     };
 
     const workingHours = [
-        { day: "Понедельник - Пятница", hours: "09:00 - 20:00" },
-        { day: "Суббота", hours: "09:00 - 18:00" },
-        { day: "Воскресенье", hours: "Выходной" }
+        { day: "Понедельник - Воскресенье", hours: "09:00 - 0:00" },
     ];
 
     return (
